@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>audio</title>
+	<style>
+		#progressBar {
+			border:1px solid #aaa;
+			color:#fff;
+			width:295px;
+			height:20px;
+		}
+		#progress {
+			background-color:#ff0000;
+			height:20px;
+			display:inline-block;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h2>Video</h2>
+
+	<h4>Method 1</h4>
+	<video id='video' src='http://dl24.80s.im:920/1601/[Taylor.Swift]Out.Of.The.Woods/[Taylor.Swift]Out.Of.The.Woods.mp4'></video>
+	<br>
+	<div>
+		<button onclick="document.getElementById('video').play()">开始</button>
+		<button onclick="document.getElementById('video').pause()">暂停</button>
+		<button onclick="document.getElementById('video').loop='ture'">循环</button>
+		<button onclick="document.getElementById('video').volume+=0.1">提高音量</button>
+		<button onclick="document.getElementById('video').volume-=0.1">降低音量</button>
+		<div id="progressBar"><span id="progress"></span></div>
+	</div>
+	<script>
+		var testVid=document.getElementById("video");
+
+		function addProgressMassage(massage){
+			document.getElementById("massagesContainer").innerHTML += massage + '<br>';
+		}
+
+		function updateProgress() {
+			var progress = document.getElementById("progress");
+			var value = 0;
+			if (testVid.currentTime > 0) {
+				value = Math.floor((100 / testVid.duration) * testVid.currentTime);
+			}
+			progress.style.width = value + "%";
+		}
+
+		testVid.addEventListener("timeupdate", updateProgress, false);
+	</script> 
+</body>
+
+</html>
