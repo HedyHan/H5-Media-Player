@@ -9,3 +9,6 @@ Just a study note about html5 video/audio learning.
 #### Step2 自定义控件
 - [Video player styling basics](https://developer.mozilla.org/en-US/Apps/Fundamentals/Audio_and_video_delivery/Video_player_styling_basics#Responsive_styling)
 - [Creating a cross-browser video player](https://developer.mozilla.org/en-US/Apps/Fundamentals/Audio_and_video_delivery/cross_browser_video_player)
+
+#### Step3 第一个WebSocket客户端应用程序
+- [试用WebSocket API \- 前往wiki查看](https://github.com/HedyHan/H5-Media-Player/wiki/%5Bwebsocket%E7%AC%94%E8%AE%B0%5D--%E4%BD%BF%E7%94%A8API)
