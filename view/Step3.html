@@ -5,9 +5,49 @@
     <title></title>
 </head>
 <body>
-    <h3>动态创建video</h3>
-    <button onclick="displayVideo('http://dl24.80s.im:920/1601/[Taylor.Swift]Out.Of.The.Woods/[Taylor.Swift]Out.Of.The.Woods.mp4')">获取视频</button>
-    <div id="media-list"></div>
-    <script src="../js/video-chat.js"></script>
+    <div id="output"></div>
+    <script>
+        var output;
+        var ws;
+
+        function setup(){
+            output = document.getElementById('output');
+            ws = new WebSocket('ws://echo.websocket.org/');
+
+            ws.onopen = function(e){
+                printState('Connected');
+                sendMessage('Hello World!')
+            };
+
+            ws.onclose = function(e){
+                printState('Disconnected'+ e.reason);
+            };
+
+            ws.onerror = function(e){
+                printState('Error');
+            };
+
+            ws.onmessage = function(e){
+                printState('Message received:'+ e.data);
+                ws.close();
+            }
+        }
+
+        function sendMessage(msg){
+            ws.send(msg);
+            printState('Message Sent');
+        }
+
+        function printState(s){
+            var p = document.createElement('p');
+            p.style.wordWrap = "break-word";
+            p.textContent = s;
+            output.appendChild(p);
+
+            console.log(s)
+        }
+
+        setup();
+    </script>
 </body>
 </html>
