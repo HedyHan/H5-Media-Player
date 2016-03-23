@@ -11,4 +11,6 @@ Just a study note about html5 video/audio learning.
 - [Creating a cross-browser video player](https://developer.mozilla.org/en-US/Apps/Fundamentals/Audio_and_video_delivery/cross_browser_video_player)
 
 #### Step3 第一个WebSocket客户端应用程序
+> 通过Web与一台远程服务器通信，用WebSocket交换数据
+
 - [试用WebSocket API \- 前往wiki查看](https://github.com/HedyHan/H5-Media-Player/wiki/%5Bwebsocket%E7%AC%94%E8%AE%B0%5D--%E4%BD%BF%E7%94%A8API)
