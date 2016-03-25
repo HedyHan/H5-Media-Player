@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h2>WebSocket Chatroom</h2>
+
+    <div>
+        昵称: <input id="handleInput" type="text"/>
+        消息: <input id="messageInput" type="text" size="64"/>
+        <input onclick="sendMes()" id="sendButton" type="submit" value="Send"/>
+    </div>
+    <div id="output"></div>
+
+    <script>
+        var content = document.getElementById('#output');
+        var sendButton = document.getElementById('#sendButton');
+        var message = document.getElementById('#messageInput').value();
+        var ws = new WebSocket('ws://localhost:3003');
+
+        ws.onopen = function() {
+            console.log('Connected');
+        };
+
+
+        function sendMes() {
+            ws.send(message);
+        }
+
+        ws.onmessage = function(msg) {
+            console.log('Received message from server: ' + msg.data);
+            addMessage(msg.data);
+        };
+
+        function addMessage(message) {
+            content.prepend('<p><span>' + message + '</span></p>');
+        }
+    </script>
+
+</body>
+</html>

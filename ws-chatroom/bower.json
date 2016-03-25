@@ -1,0 +1,22 @@
+{
+  "name": "ws-chatroom",
+  "description": "",
+  "main": "",
+  "authors": [
+    "HanChao <han9406@163.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2"
+  }
+}
